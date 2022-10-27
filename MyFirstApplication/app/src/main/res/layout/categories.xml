@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".CategoriesActivity">
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="37dp"
+        android:layout_marginTop="66dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo" />
+
+    <!--<EditText
+        android:id="@+id/editText2"
+        android:layout_width="335dp"
+        android:layout_height="38dp"
+        android:alpha="0.5"
+        android:background="@color/search"
+        android:hint="Поиск"
+        android:paddingHorizontal="30dp"
+        android:textColorHint="@drawable/field_for_name"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3" />-->
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/search_field"
+        android:minHeight="35dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="0.1"
+            app:srcCompat="@drawable/search" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="0.8"
+
+            android:hint="Поиск"
+            android:textColorHint="@color/registration"
+            android:textSize="12sp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="0.1"
+            android:gravity="center"
+            app:srcCompat="@drawable/filter" />
+
+    </LinearLayout>
+
+    <!--<ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="11dp"
+        app:layout_constraintBottom_toBottomOf="@+id/editText3"
+        app:layout_constraintStart_toStartOf="@+id/editText3"
+        app:srcCompat="@drawable/search" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="11dp"
+        app:layout_constraintBottom_toBottomOf="@+id/editText3"
+        app:layout_constraintEnd_toEndOf="@+id/editText3"
+        app:srcCompat="@drawable/filter" />-->
+
+<!--    android:background="color/transparent"-->
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:onClick="ToHomePage"
+            android:gravity="center_horizontal"
+            android:paddingVertical="17dp"
+            app:srcCompat="@drawable/home_page" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:paddingVertical="17dp"
+            android:onClick="ToBuyList"
+            app:srcCompat="@drawable/buy_list" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:onClick="ToIngredients"
+            android:gravity="center_horizontal"
+            android:paddingVertical="17dp"
+            app:srcCompat="@drawable/fridge" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:paddingVertical="17dp"
+            app:srcCompat="@drawable/search2" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:onClick="ToMyProfile"
+            android:gravity="center_horizontal"
+            android:paddingVertical="17dp"
+            app:srcCompat="@drawable/my_page" />
+
+    </LinearLayout>
+
+    <!--<ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="5dp"
+            android:columnCount="2"
+            android:columnOrderPreserved="false"
+            android:orientation="horizontal"
+            android:paddingHorizontal="10dp">
+
+            <ImageButton
+                android:layout_width="170dp"
+                android:layout_height="105dp" />
+
+            <ImageButton
+                android:layout_width="170dp"
+                android:layout_height="105dp" />
+
+            <ImageButton
+                android:layout_width="170dp"
+                android:layout_height="105dp" />
+
+            <ImageButton
+                android:layout_width="170dp"
+                android:layout_height="105dp" />
+
+            <ImageButton
+                android:layout_width="170dp"
+                android:layout_height="105dp" />
+
+            <ImageButton
+                android:layout_width="170dp"
+                android:layout_height="105dp" />
+
+            <ImageButton
+                android:layout_width="170dp"
+                android:layout_height="105dp" />
+
+            <ImageButton
+                android:layout_width="170dp"
+                android:layout_height="105dp" />
+
+            <ImageButton
+                android:layout_width="170dp"
+                android:layout_height="105dp" />
+
+            <ImageButton
+                android:layout_width="170dp"
+                android:layout_height="105dp" />
+
+            <ImageButton
+                android:layout_width="170dp"
+                android:layout_height="105dp" />
+
+            <ImageButton
+                android:layout_width="170dp"
+                android:layout_height="105dp" />
+
+        </GridLayout>
+
+    </ScrollView>-->
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+        app:layout_constraintVertical_bias="0">
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:columnCount="2"
+            android:layout_margin="15dp">
+
+            <Button
+                android:layout_gravity="fill"
+                android:layout_margin="5dp"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/opacity_green"
+                android:text="Первые блюда"
+                android:textColor="@color/white"
+                android:fontFamily="@font/pt_serif"
+                android:textSize="16dp"/>
+            <Button
+                android:layout_gravity="fill"
+                android:layout_margin="5dp"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/opacity_green"
+                android:text="Вторые блюда"
+                android:textColor="@color/white"
+                android:fontFamily="@font/pt_serif"
+                android:textSize="16dp"/>
+            <Button
+                android:layout_gravity="fill"
+                android:layout_margin="5dp"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/opacity_green"
+                android:text="Мясо/птица"
+                android:textColor="@color/white"
+                android:fontFamily="@font/pt_serif"
+                android:textSize="16dp"/>
+            <Button
+                android:layout_gravity="fill"
+                android:layout_margin="5dp"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/opacity_green"
+                android:text="Рыбные блюда"
+                android:textColor="@color/white"
+                android:fontFamily="@font/pt_serif"
+                android:textSize="16dp"/>
+            <Button
+                android:layout_gravity="fill"
+                android:layout_margin="5dp"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/opacity_green"
+                android:text="Закуски"
+                android:textColor="@color/white"
+                android:fontFamily="@font/pt_serif"
+                android:textSize="16dp"/>
+            <Button
+                android:layout_gravity="fill"
+                android:layout_margin="5dp"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/opacity_green"
+                android:text="Салаты"
+                android:textColor="@color/white"
+                android:fontFamily="@font/pt_serif"
+                android:textSize="16dp"/>
+            <Button
+                android:layout_gravity="fill"
+                android:layout_margin="5dp"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/opacity_green"
+                android:text="Напитки"
+                android:textColor="@color/white"
+                android:fontFamily="@font/pt_serif"
+                android:textSize="16dp"/>
+            <Button
+                android:layout_gravity="fill"
+                android:layout_margin="5dp"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/opacity_green"
+                android:text="Десерты"
+                android:textColor="@color/white"
+                android:fontFamily="@font/pt_serif"
+                android:textSize="16dp"/>
+            <Button
+                android:layout_gravity="fill"
+                android:layout_margin="5dp"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/opacity_green"
+                android:text="Заготовки"
+                android:textColor="@color/white"
+                android:fontFamily="@font/pt_serif"
+                android:textSize="16dp"/>
+            <Button
+                android:layout_gravity="fill"
+                android:layout_margin="5dp"
+                android:layout_columnWeight="1"
+                android:layout_rowWeight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/opacity_green"
+                android:text="Выпечка"
+                android:textColor="@color/white"
+                android:fontFamily="@font/pt_serif"
+                android:textSize="16dp"/>
+        </GridLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
