@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Delicious meal</string>
+    <string name="title_activity_navigation">NavigationActivity</string>
+    <string name="title_home_page">Это лента рецептов</string>
+    <string name="title_buy_list">Это список покупок</string>
+    <string name="title_ingredients">Это ингредиенты</string>
+    <string name="title_categories">Это категории рецептов</string>
+    <string name="title_my_profile">Это личный профиль</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
 </resources>

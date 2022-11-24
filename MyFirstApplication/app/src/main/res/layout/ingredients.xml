@@ -53,8 +53,8 @@
             android:layout_width="wrap_content"
             android:layout_height="fill_parent"
             android:layout_weight="1"
-            android:onClick="ToBuyList"
             android:gravity="center_horizontal"
+            android:onClick="ToBuyList"
             android:paddingVertical="17dp"
             app:srcCompat="@drawable/buy_list" />
 
@@ -62,8 +62,8 @@
             android:layout_width="wrap_content"
             android:layout_height="fill_parent"
             android:layout_weight="1"
-            android:onClick="ToIngredients"
             android:gravity="center_horizontal"
+            android:onClick="ToIngredients"
             android:paddingVertical="17dp"
             app:srcCompat="@drawable/fridge" />
 
@@ -72,16 +72,16 @@
             android:layout_height="fill_parent"
             android:layout_weight="1"
             android:gravity="center_horizontal"
-            android:paddingVertical="17dp"
             android:onClick="ToCategories"
+            android:paddingVertical="17dp"
             app:srcCompat="@drawable/search2" />
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="fill_parent"
             android:layout_weight="1"
-            android:onClick="ToMyProfile"
             android:gravity="center_horizontal"
+            android:onClick="ToMyProfile"
             android:paddingVertical="17dp"
             app:srcCompat="@drawable/my_page" />
 
