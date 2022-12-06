@@ -35,10 +35,10 @@ class CategoriesFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val imageView: ImageView = view.findViewById(R.id.imageView3)
+/*        val imageView: ImageView = view.findViewById(R.id.imageView3)
         imageView.setOnClickListener{
             startActivity(Intent(view.context, RecipeActivity::class.java))
-        }
+        }*/
 
         database = Firebase.database.reference
 /*
@@ -99,6 +99,11 @@ class CustomRecyclerAdapter(private val names: List<Categories>) : RecyclerView
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         holder.largeTextView.text = names[position].name
         Picasso.get().load( names[position].img).into(holder.img)
+        holder.itemView.setOnClickListener { view ->
+            view.context.startActivity(Intent(view.context, RecipeListActivity::class.java).apply{
+                putExtra("catName", names[position].name)
+            })
+        }
     }
 
     override fun getItemCount() = names.size

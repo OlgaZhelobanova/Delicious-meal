@@ -5,17 +5,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.CheckBox
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myfirstapplication.Categories
+import com.example.myfirstapplication.CustomRecyclerAdapter
 import com.example.myfirstapplication.R
-import com.example.myfirstapplication.databinding.FragmentBuyListBinding
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
+import com.squareup.picasso.Picasso
 
 data class BuyList(val name: String?, val quantity: Int?, val measure: String?)
 
@@ -23,6 +24,9 @@ class BuyListFragment : Fragment() {
 
     private lateinit var database: DatabaseReference
     private lateinit var checkBox: CheckBox
+    private lateinit var sourcelist: List<String>
+    private lateinit var selectedlist: List<String>
+    private lateinit var recyclerView: RecyclerView
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -38,7 +42,7 @@ class BuyListFragment : Fragment() {
 
         database = Firebase.database.reference
 
-        val list = mutableListOf(
+       /* val list = mutableListOf(
             BuyList("картофель", 1, "кг"),
             BuyList("молоко", 1, "л"),
             BuyList("яйца", 10, "шт."),
@@ -46,7 +50,7 @@ class BuyListFragment : Fragment() {
             BuyList("помидоры", 5, "шт."),
         )
 
-        database.child("BuyList").setValue(list)
+        database.child("BuyList").setValue(list)*/
 
         database.child("BuyList").get().addOnCompleteListener { task ->
             if (task.isSuccessful){
@@ -61,30 +65,33 @@ class BuyListFragment : Fragment() {
                     listfdb.add(BuyList(name, quantity, measure))
                 }
 
-                checkBox = view.findViewById(R.id.check1)
-               // checkBox.adapter = CustomRecyclerAdapter(listfdb)
+                recyclerView = view.findViewById(R.id.rec2)
+                recyclerView.layoutManager = GridLayoutManager(view.context, 1)
+                /*recyclerView.adapter = BuyListRecyclerAdapter(listfdb)*/
+
             }
         }
     }
 }
 
+/*class BuyListRecyclerAdapter(private val names: List<BuyList>) : RecyclerView
+.Adapter<BuyListRecyclerAdapter.MyViewHolder>() {
 
-//class CustomRecyclerAdapter(private val names: List<BuyList>) : CheckBox
-//.Adapter<CustomRecyclerAdapter.MyViewHolder>() {
-//
-//    class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-//        val largeTextView: TextView = itemView.findViewById(R.id.nameOfCat)
-//    }
-//
-//    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
-//        val itemView = LayoutInflater.from(parent.context)
-//            .inflate(R.layout.category, parent, false)
-//        return MyViewHolder(itemView)
-//    }
-//
-//    override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-//        holder.largeTextView.text = names[position].name
-//    }
-//
-//    override fun getItemCount() = names.size
-//}
+    class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        val largeTextView: TextView = itemView.findViewById(R.id.nameOfCat)
+        val img: ImageView = itemView.findViewById(R.id.img)
+    }
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
+        val itemView = LayoutInflater.from(parent.context)
+            .inflate(R.layout.category, parent, false)
+        return MyViewHolder(itemView)
+    }
+
+    override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
+        holder.largeTextView.text = names[position].name
+        Picasso.get().load( names[position].img).into(holder.img)
+    }
+
+    override fun getItemCount() = names.size
+}*/

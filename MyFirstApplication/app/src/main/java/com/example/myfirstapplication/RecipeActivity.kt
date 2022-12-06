@@ -14,7 +14,7 @@ import com.squareup.picasso.Picasso
 
 data class Recipes(val img: String?, val name: String?, val kkal: String?, val protein: String?,
 val carb: String?, val fat: String?, val time: String?, val portion: String?, val reyting: String?,
-val ingredients: String?, val text: String?)
+val ingredients: String?, val text: String?, val category: String?)
 
 class RecipeActivity : AppCompatActivity() {
 

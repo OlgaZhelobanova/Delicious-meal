@@ -11,7 +11,7 @@ import com.google.firebase.ktx.Firebase
 class StartPageActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        FirebaseAuth.getInstance().signOut()
+        //FirebaseAuth.getInstance().signOut()
         val currentUser = Firebase.auth.currentUser
         if (currentUser != null)
             startActivity(Intent(this, NavigationActivity::class.java))
